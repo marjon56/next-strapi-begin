@@ -13,6 +13,17 @@ async function getTeamMembers() {
       photo: {
         fields: ["alternativeText", "name", "url"],
       },
+      blocks: {
+        on: {
+          'blocks.testimonial': {
+            populate: {
+              photo: {
+                fields: ["alternativeText", "name", "url"],
+              }
+            }
+          }
+        }
+      }
     },
   });
 
